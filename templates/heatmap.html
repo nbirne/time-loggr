@@ -1,0 +1,48 @@
+<!-- Display user's data in a heatmap (color-coded table) -->
+
+{% extends "layout.html" %}
+
+{% block script %}
+    <script src="static/scripts.js"></script>
+{% endblock %}
+
+{% block title %}
+    Heatmap
+{% endblock %}
+
+{% block main %}
+    {% if x_dates|length == 0 %}
+        <a href="/">Nothing to see yet! Log time to see a heatmap.</a>
+    {% else %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    
+                    <!-- Create a row of th, one for each class name -->
+                    {% for class_name in class_labels %}
+                    <th>{{ class_name }}</th>
+                    {% endfor %}
+
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Create a row for each date, starting with most recent -->
+                {% for i in range(x_dates|length)|reverse %}
+                <tr>
+                    <td>{{ x_dates[i] }}</td>
+
+                    <!-- Create a td for each class j, w/ amount of time logged for that class on date i -->
+                    {% for j in range(y_mins|length) %}
+                    <td data-mins="{{ y_mins[j][i] }}" class="heatmap">{{ y_mins[j][i] // 60 }} h, {{ y_mins[j][i] % 60 }} m</td>
+                    {% endfor %}
+
+                    <!-- Create td w/ total time logged on date i -->
+                    <td class="total">{{ totals[i] // 60 }} h, {{ totals[i] % 60 }} m</td>
+                </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+<!-- Display two forms: one for adding classes, another for activating/deactivating classes -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Manage
+{% endblock %}
+
+{% block main %}
+    <!-- Form for adding a class -->
+    <form class="form-small" action="/manage" method="post">
+        <div class="mb-3">
+            <p>Add a class: </p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="class" name="class" placeholder="Class Name" type="text">
+        </div>
+        <button name="add" class="btn btn-primary" type="submit">Add</button>
+    </form>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- Form for activating/deactivating classes -->
+    <form class="form-small" action="/manage" method="post">
+        <div class="mb-3">
+            <p>Mark active classes: </p>
+
+            <!-- Display a checkbox for each class -->
+            {% for class in classes %}
+                <!-- Make checkbox (should be checked if class is active) -->
+                <input {% if class["active"] %} checked {% endif %} class="form-check-input" id="{{ class['class'] }}" name="{{ class['class'] }}" type="checkbox">
+                
+                <!-- Make label for checkbox -->
+                <label class="form-check-label" for="{{ class['class'] }}"> {{ class['class'] }}</label><br>
+            {% endfor %}
+        </div>
+
+        <button name="activate" class="btn btn-primary" type="submit">Save Changes</button>
+    </form>
+{% endblock %}

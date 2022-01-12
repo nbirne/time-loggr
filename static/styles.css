@@ -1,0 +1,49 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+.container {
+    width: 46vw;
+}
+
+
+/* Gradient made with https://cssgradient.io/ */
+body {
+    background: rgb(201,215,235);
+    background: linear-gradient(90deg, rgba(201,215,235,0.6573004201680672) 0%, rgba(226,240,245,0.7525385154061625) 50%, rgba(201,215,235,0.7105217086834734) 100%);
+}
+
+nav {
+    background: rgb(158, 158, 158);
+}
+
+button:hover, .nav-link:hover {
+    transform: scale(1.02);
+    transition: all .1s ease-in-out;
+}
+
+form {
+    border: 2px solid rgba(59, 59, 59, 0.493);
+    width: fit-content;
+    margin: auto;
+    background-color:rgba(186, 230, 248, 0.747)
+}
+
+#chart {
+    padding: 15px;
+    border: 2px solid black;
+}
+
+form, #chart {
+    border-radius: 10px;
+}
+
+.form-small {
+    padding: 10px 20px 20px 20px;
+}
+
+.form-large {
+    padding: 20px 20px 20px 20px;
+}

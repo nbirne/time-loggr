@@ -1,0 +1,41 @@
+<!-- Form for logging time -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Log
+{% endblock %}
+
+{% block main %}
+    <form class="form-small" action="/" method="post">
+        <div class="mb-3">
+            {% if classes|length == 0 %}
+                <a href="/manage">To start logging time, add a class!</a>
+            {% endif %}
+        </div>
+
+        <!-- Dropdown list with option for each class -->
+        <div class="mb-3">
+            <div class="mb-3">
+                <h3>Log Time</h3>
+            </div> 
+
+            <select name="class" class="form-select mx-auto w-auto" id="class" name="class">
+                <option disabled selected>Choose a class</option>
+                {% for class_row in classes %}
+                    <option value="{{ class_row['class'] }}">{{ class_row['class'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Input fields for hours and minutes -->
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="hours" name="hours" placeholder="Hours" type="number" step="0.01">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="minutes" name="minutes" placeholder="Minutes" type="number">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Log!</button>
+    </form>
+{% endblock %}

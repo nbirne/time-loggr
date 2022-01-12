@@ -1,0 +1,35 @@
+<!-- Display table of all of user's logs -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    {% if logs|length == 0 %}
+        <a href="/">Nothing to see yet! Log time to see your history.</a>
+    {% else %}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">Minutes</th>
+                    <th scope="col">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Show each log in its own tr -->
+                {% for log in logs|reverse %}
+                    <tr>
+                        <td>{{ log["class"] }}</td>
+                        <td>{{ log["minutes"] // 60 }}</td>
+                        <td>{{ log["minutes"] % 60 }}</td>
+                        <td>{{ log["timestamp"] }}</td>
+                    </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
