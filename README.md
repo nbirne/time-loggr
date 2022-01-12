@@ -1,4 +1,4 @@
-## VIDEO: https://youtu.be/mGu__CwJLmU
+## Video: https://youtu.be/mGu__CwJLmU
 
 ---
 
