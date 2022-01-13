@@ -4,7 +4,7 @@
 
 ## How to run this project:
 
-This project can be run in VSCode, either locally on your device or via code.cs50.io. Required Python packages are cs50, Flask, and Flask-Session, which were also used for the Finance problem set. To run the program, navigate to the project directory and enter "flask run" in your terminal.
+Required Python packages are cs50, Flask, and Flask-Session, which were also used for the Finance problem set. To run the program, navigate to the project directory and enter "flask run" in your terminal.
 
 
 ## What the website does:
