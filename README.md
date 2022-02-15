@@ -1,7 +1,3 @@
-## Video: https://youtu.be/mGu__CwJLmU
-
----
-
 ## How to run this project:
 
 Required Python packages are cs50, Flask, and Flask-Session, which were also used for the Finance problem set. To run the program, navigate to the project directory and enter "flask run" in your terminal.
@@ -22,4 +18,6 @@ Aside from log in / log out / register functionality, the website has five pages
 ## Using a pre-made account:
 
 Because Time Loggr requires data before it can generate any interesting visualizations, you may want to test the website using an account with pre-loaded data. To access such an account, you can log in with the username "N" and password "123" (no quotes). Because much of this data was inserted with a SQL query, rather than organically through the website, the timestamps visible on the History page are in a slightly modified format necessary for inserting timestamps manually (for instance, "2021-11-27T21:05:33" instead of "2021-11-27 21:05:33").
+
+Video: https://youtu.be/mGu__CwJLmU
 
